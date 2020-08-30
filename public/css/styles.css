@@ -2,6 +2,10 @@
     width: 250px;
 }
 
+.small-picture {
+    width: 50px;
+}
+
 input {
     border: 1px solid #cccccc;
     padding: 8px;
@@ -33,9 +37,25 @@ body {
     
     /* main content to take up all left over space */
     flex-grow: 1;
+
+    /* added */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* added class */
+.message-1 {
+    margin-top: 16px;
+    margin-bottom: 20px;
 }
 
 header {
+    /* added */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
     margin-top: 16px;
     margin-bottom: 48px;
 }

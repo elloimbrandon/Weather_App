@@ -55,7 +55,7 @@ app.get('/weather', (req, res) => {
 
 app.get('', (req, res) => { // express go's and gets the file, converts to html and sent back to requester
     res.render('index', {
-        title: 'Weather App',
+        title: 'Weather',
         name: 'Brandon'
     }) 
 })
