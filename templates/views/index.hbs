@@ -16,15 +16,17 @@
     </head>
     <body>
         {{!-- short hand method for div class div.main-content --}}
+        {{>header}}
         <div class="main-content">
-            {{>header}}
             <p>Use this site to get your weather.</p>
-            <form>
-                <input placeholder="Search City, State, or Zip Code" size="27">
-                <button>Search</button>
+            <form class="form-inline input-group my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search City, State, or Zip Code">
+                <button type="btn btn-outline-success my-2 my-sm-0" class="btn btn-primary">Search</button>
             </form>
-            <p class="message-1" id="message-1"></p>
-            <p class="message-1" id="message-2"></p>
+        </div>
+        <div class="output-messages">
+            <p id="message-1"></p>
+            <p id="message-2"></p>
         </div>
         {{>footer}}
         <script src="/js/app.js"> </script>

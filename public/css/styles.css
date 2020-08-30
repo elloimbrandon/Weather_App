@@ -1,3 +1,8 @@
+.output-messages {
+    text-align: center;
+    margin-bottom: 250px;
+}
+
 .portrait {
     width: 250px;
 }
@@ -6,29 +11,17 @@
     width: 50px;
 }
 
-input {
-    border: 1px solid #cccccc;
-    padding: 8px;
-}
-
-button {
-    cursor: pointer;
-    border: 1px solid #888888;
-    background: #888888;
-    color: white;
-    padding: 8px;
-}
 
 body {
     color: #333333;
     font-family: arial;
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 0 16px;
+    /* made middle justified */
+    max-width: 1400px;
 
     /* enabling flex */
     display: flex;
     flex-direction: column;
+
     /* view height */
     min-height: 100vh;
 }
@@ -42,12 +35,9 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-}
 
-/* added class */
-.message-1 {
-    margin-top: 16px;
-    margin-bottom: 20px;
+    /* from top to middle */
+    padding-top: 50px;
 }
 
 header {
@@ -56,15 +46,15 @@ header {
     margin-left: auto;
     margin-right: auto;
 
-    margin-top: 16px;
-    margin-bottom: 48px;
+    display: flex;
+    padding-top:150px;
 }
 
 footer {
     color: #888888;
-    border-top: 1px solid #eeeeee;
-    margin-top: 16px;
-    padding: 16px 0;
+    /* border-top: 1px solid #eeeeee; */
+    /* margin-top: 5px; */
+    padding: 5px 0;
 }
 
 h1 {
