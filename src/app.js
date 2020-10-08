@@ -8,32 +8,22 @@ const forcast = require('./utils/forecast')
 
 const app = express()
 const port = process.env.PORT || 3000
-
-// Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, '../templates/views') // tells express to use this path for handlebars templates
+const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
-// Setup handlebars engine and views location
-app.set('view engine', 'hbs') // initialize handlebars in the backround with express (template)
-app.set('views', viewsPath) // pointing to certain directory
+app.set('view engine', 'hbs')
+app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
-// Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
-
-// req = request, res = response
-// send json
-
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
-        // using return instead of else statement so that we dont send a response twice if theirs and error
         return res.send({
             error: 'You must provide a valid address'
         })
     }
-    // setup a default object incase of error ex. = {}
     geocode(req.query.address, (error, {latitude, longitude, location} = {}) => { 
         if (error) {
             return res.send({error})
@@ -53,7 +43,7 @@ app.get('/weather', (req, res) => {
     })
 })
 
-app.get('', (req, res) => { // express go's and gets the file, converts to html and sent back to requester
+app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
         name: 'Brandon'
@@ -81,10 +71,9 @@ app.get('/help/*', (req, res) => {
         name: 'Brandon',
         errorMessage: 'Artical not found.'
     })
-    // res.send('help article not found')
 })
 
-app.get('*', (req, res) => { // 404 page using wildcard if it didnt match before
+app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
         name: 'Brandon',
@@ -95,8 +84,3 @@ app.get('*', (req, res) => { // 404 page using wildcard if it didnt match before
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
-
-
-// app.listen(3000, () => {
-//     console.log('Server is up on port 3000.')
-// })
